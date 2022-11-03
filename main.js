@@ -100,3 +100,7 @@ setTimeout(() => {
   stampaCalcolo.innerHTML = `La quantità di numeri indovinati sono: ${calcolo}`
 }, 10000)
 
+//funzione per ricaricare pagina dopo 20 sec
+setTimeout(() => {
+  window.location.reload()
+}, 20000);
