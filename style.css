@@ -2,6 +2,22 @@
     display: none;
 }
 
-.conteiner{
+.box{
+   text-align: center; 
+   background-color: lightgrey;
+   font-size: 25px;
+   padding: 50px 0;
+   width: 100%;
+}
+
+#stampacontrollo{
+    margin: 20px 0 ;
     
+}
+
+.conteiner{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }

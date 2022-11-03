@@ -10,6 +10,15 @@
 //array di numeri random
 let numeri = [];
 
+//quali numeri ho indovinato
+let controllo = document.getElementById("stampacontrollo")
+
+
+//quanti numeri ho indovinato
+let stampaCalcolo = document.getElementById("stampacalcolo")
+let calcolo = 0
+
+
 //funzione numeri random
 function numeriRandom(num) {
   return Math.floor(Math.random() * num) + 1;
@@ -22,11 +31,12 @@ for (i = 0; i < 5; i++) {
 
 }
 
-
+//stampa dei numeri random
 let Stampa = document.getElementById("stampa");
-Stampa.innerHTML += numeri
+Stampa.innerHTML += `Numeri da ricordare: ${numeri}`
 
 console.log(numeri);
+
 //funzione per far scomparire i numeri
 setTimeout(() => {
   Stampa.classList.add("remove");
@@ -39,28 +49,16 @@ let NumeriUtente = [];
 //funzione per far comparire 5 prompt
 setTimeout(() => {
   for (let y = 0; y < 5; y++) {
-
-
     let InserisciUtente = parseInt(prompt("Inseirisci Numero"));
     NumeriUtente.push(InserisciUtente)
   }
-
 }, 5030);
-
-
-//quali numeri ho indovinato
-let controllo = document.getElementById("stampacontrollo")
-
-
-//quantio numeri ho indovinato
-let stampaCalcolo = document.getElementById("stampacalcolo")
-let calcolo = 0
 
 
 // controllo dei numeri uguali tra quelli inseriti e quelli random
 setTimeout(() => {
   console.log(NumeriUtente);
-  controllo.innerHTML += `I numeri indovinati sono :`
+  controllo.innerHTML += `I numeri che hai indovinato sono:`
 
   if (NumeriUtente.includes(numeri[0])) {
     console.log("preso")
@@ -98,7 +96,7 @@ setTimeout(() => {
     console.log("sbagliato");
   }
 
-  stampaCalcolo.innerHTML = `Hai indovinato: ${calcolo} numeri`
+  // stampa numeri indovinati
+  stampaCalcolo.innerHTML = `La quantità di numeri indovinati sono: ${calcolo}`
 }, 10000)
-
 
